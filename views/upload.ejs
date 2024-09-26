@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Songs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
+</head>
+<body class="bg-gradient-to-b from-black to-red-700 text-white min-h-screen mx-auto">
+
+    <header class="bg-red-900 p-4 shadow-md fixed top-0 left-0 right-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-3xl font-bold">SpotiBri</h1>
+            <nav class="mt-2">
+                <a href="/songs" class="text-white hover:text-black-300 px-3 py-2 transition duration-200">Songs</a>
+                <a href="/upload" class="text-white hover:text-black-300 px-3 py-2 transition duration-200">Upload Song</a>
+            </nav>
+            
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-24 p-8 bg-black shadow-lg rounded-lg">
+        <h2 class="text-4xl font-bold text-center text-red-500 mb-8">Upload a New Song</h2>
+    
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="title" class="block text-lg font-medium text-gray-300">Title</label>
+                    <input type="text" name="title" id="title" required class="mt-1 p-2 block w-full border-gray-700 bg-black text-white rounded-md shadow-sm focus:ring-red-500 focus:border-red-500">
+                </div>
+                <div>
+                    <label for="artist" class="block text-lg font-medium text-gray-300">Artist</label>
+                    <input type="text" name="artist" id="artist" required class="mt-1 p-2 block w-full border-gray-700 bg-black text-white rounded-md shadow-sm focus:ring-red-500 focus:border-red-500">
+                </div>
+                <div>
+                    <label for="album" class="block text-lg font-medium text-gray-300">Album</label>
+                    <input type="text" name="album" id="album" required class="mt-1 p-2 block w-full border-gray-700 bg-black text-white rounded-md shadow-sm focus:ring-red-500 focus:border-red-500">
+                </div>
+                <div>
+                    <label for="song" class="block text-lg font-medium text-gray-300">Song File</label>
+                    <input type="file" name="song" id="song" accept=".mp3, .wav" required class="mt-1 p-2 bg-black text-white block w-full border-gray-700 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500">
+                </div>
+            </div>
+            <button type="submit" class="w-full bg-red-500 text-white py-3 rounded-md hover:bg-red-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Upload</button>
+        </form>
+    </main>
+</body>
+
+</html>
